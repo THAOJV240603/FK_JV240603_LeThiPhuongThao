@@ -48,6 +48,7 @@ public class BookManagement {
                                 break;
                             case 6:
                                 check = false;
+                                break;
                             default:
                                 System.out.println("Sai lựa chọn");
                         }
@@ -90,6 +91,7 @@ public class BookManagement {
                                 break;
                             case 8:
                                 check1 = false;
+                                break;
                             default:
                                 System.out.println("Sai lựa chọn");
                         }
