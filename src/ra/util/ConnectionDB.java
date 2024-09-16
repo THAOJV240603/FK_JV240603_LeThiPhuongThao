@@ -7,7 +7,7 @@ import java.sql.Statement;
 
 public class ConnectionDB {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/FK_JV240603_LeThiPhuongThao";
     private static final String USER = "root";
     private static final String PASS = "admin";
 
