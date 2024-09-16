@@ -155,6 +155,7 @@ public class BookBusiness {
     }
 
     //ds sách theo giá giảm dần
+    /*
     public static Book sortByPrice(double price) {
         Book book = null;
         Connection connection = null;
@@ -189,6 +190,8 @@ public class BookBusiness {
         }
         return book;
     }
+    */
+
     //Tìm kiếm
     public static List<Book> searchBookByNameContent(String keyword) {
         List<Book> books = new ArrayList<>();
