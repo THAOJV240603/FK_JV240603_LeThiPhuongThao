@@ -1,5 +1,5 @@
 create database quanlythuvien;
-use quanlysthuvien;
+use quanlythuvien;
 create table BookType(
 	TypeId int primary key auto_increment,
     TypeName varchar(50) not null unique,
