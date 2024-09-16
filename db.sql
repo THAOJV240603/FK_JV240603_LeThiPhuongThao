@@ -24,4 +24,4 @@ create table Book(
 );
 
 select * from BookType;
-select * from book;
+select * from Book;
