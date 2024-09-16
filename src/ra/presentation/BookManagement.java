@@ -299,7 +299,7 @@ public class BookManagement {
 
     //Tìm kiếm
     public static void searchBook(Scanner sc){
-        System.out.println("Nhập tên sách cần tìm:");
+        System.out.println("Nhập tên sách hoặc nội dung cần tìm:");
         String keyword = sc.nextLine();
         List<Book> books = BookBusiness.searchBookByNameContent(keyword);
         for (Book book : books) {
