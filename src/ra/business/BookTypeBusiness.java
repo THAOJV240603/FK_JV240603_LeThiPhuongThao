@@ -74,13 +74,13 @@ public class BookTypeBusiness {
         try{
             connection = ConnectionDB.openConnection();
 
-            String sql = "insert into BookType (TypeId, TypeName, Description, IsDeleted) values (?,?,?,?)";
+            String sql = "insert into BookType (TypeName, Description, IsDeleted) values (?,?,?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.setInt(1, bookType.getTypeId());
-            statement.setString(2, bookType.getTypeName());
-            statement.setString(3, bookType.getDescription());
-            statement.setBoolean(4, bookType.isDeleted());
+            //statement.setInt(1, bookType.getTypeId());
+            statement.setString(1, bookType.getTypeName());
+            statement.setString(2, bookType.getDescription());
+            statement.setBoolean(3, bookType.isDeleted());
             statement.executeUpdate();
             return true;
         } catch (Exception e) {
