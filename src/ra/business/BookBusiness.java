@@ -154,6 +154,41 @@ public class BookBusiness {
         return false;
     }
 
+    //ds sách theo giá giảm dần
+    public static Book sortByPrice(double price) {
+        Book book = null;
+        Connection connection = null;
+        try{
+            connection = ConnectionDB.openConnection();
+            PreparedStatement statement = connection.prepareStatement("select * from Book order by Price desc");
+            statement.setDouble(1, price);
+            ResultSet resultSet = statement.executeQuery();
+            book = new Book();
+            int count = 0;
+            while (resultSet.next()) {
+                count ++;
+                book.setBookId(resultSet.getInt("BookId"));
+                book.setBookName(resultSet.getString("BookName"));
+                book.setTitle(resultSet.getString("Title"));
+                book.setAuthor(resultSet.getString("Author"));
+                book.setTotalPages(resultSet.getInt("TotalPages"));
+                book.setContent(resultSet.getString("Content"));
+                book.setPublisher(resultSet.getString("Publisher"));
+                book.setPrice(resultSet.getDouble("Price"));
+                book.setTypeId(resultSet.getInt("TypeId"));
+                book.setDeleted(resultSet.getBoolean("IsDeleted"));
+            }
+            System.out.println(count);
+            if(count == 0) {
+                return null;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            ConnectionDB.closeConnection(connection);
+        }
+        return book;
+    }
     //Tìm kiếm
     public static List<Book> searchBookByNameContent(String keyword) {
         List<Book> books = new ArrayList<>();

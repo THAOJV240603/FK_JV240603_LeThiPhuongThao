@@ -83,7 +83,7 @@ public class BookManagement {
                             case 5:
                                 break;
                             case 6:
-                                BookManagement.searchBook();
+                                BookManagement.searchBook(sc);
                                 break;
                             case 7:
                                 break;
@@ -292,6 +292,9 @@ public class BookManagement {
             System.out.println("Mã sách không tồn tại");
         }
     }
+
+    //Sắp xêp theo giá giảm dần
+
     //Tìm kiếm
     public static void searchBook(Scanner sc){
         System.out.println("Nhập tên sách cần tìm:");
