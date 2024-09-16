@@ -198,7 +198,7 @@ public class BookBusiness {
         Connection connection = null;
         try{
             connection = ConnectionDB.openConnection();
-            String sql = "select * from Book where BookName, Content like ?";
+            String sql = "select * from Book where BookName or Content like ?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, "%" + keyword + "%");
             ResultSet resultSet = statement.executeQuery();
