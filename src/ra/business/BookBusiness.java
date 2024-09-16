@@ -85,19 +85,19 @@ public class BookBusiness {
         try{
             connection = ConnectionDB.openConnection();
 
-            String sql = "insert into Book(BookId,BookName,Title,Author,TotalPages,Content,Publisher,Price,TypeId,IsDelete) values (?,?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into Book(BookName,Title,Author,TotalPages,Content,Publisher,Price,TypeId,IsDelete) values (?,?,?,?,?,?,?,?,?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            statement.setInt(1, book.getBookId());
-            statement.setString(2, book.getBookName());
-            statement.setString(3, book.getTitle());
-            statement.setString(4, book.getAuthor());
-            statement.setInt(5, book.getTotalPages());
-            statement.setString(6, book.getContent());
-            statement.setString(7, book.getPublisher());
-            statement.setDouble(8, book.getPrice());
-            statement.setInt(9, book.getTypeId());
-            statement.setBoolean(10, book.isDeleted());
+            //statement.setInt(1, book.getBookId());
+            statement.setString(1, book.getBookName());
+            statement.setString(2, book.getTitle());
+            statement.setString(3, book.getAuthor());
+            statement.setInt(4, book.getTotalPages());
+            statement.setString(5, book.getContent());
+            statement.setString(6, book.getPublisher());
+            statement.setDouble(7, book.getPrice());
+            statement.setInt(8, book.getTypeId());
+            statement.setBoolean(9, book.isDeleted());
             statement.executeUpdate();
             return true;
         } catch (Exception e) {
